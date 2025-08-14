@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/User/Desktop/Job/Magna/Code/mlruns/365438821957551932/e6de832ce3f24a6f90f43a9307e0b736/artifacts
+end_time: 1755154728415
+entry_point_name: ''
+experiment_id: '365438821957551932'
+lifecycle_stage: active
+run_id: e6de832ce3f24a6f90f43a9307e0b736
+run_name: full_pipeline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755148998422
+status: 3
+tags: []
+user_id: User

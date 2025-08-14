@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/User/Desktop/Job/Magna/Code/mlruns/365438821957551932/models/m-05fa7d7aa3914b569372feaaf1cde134/artifacts
+creation_timestamp: 1755154709897
+experiment_id: '365438821957551932'
+last_updated_timestamp: 1755154723959
+model_id: m-05fa7d7aa3914b569372feaaf1cde134
+model_type: null
+name: scaler
+source_run_id: e6de832ce3f24a6f90f43a9307e0b736
+status: 2
+status_message: null

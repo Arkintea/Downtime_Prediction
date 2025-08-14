@@ -1,0 +1,55 @@
+#config/config.yaml
+
+mqtt:
+  broker: b81017cf4c2a465d95e889a703a380b6.s1.eu.hivemq.cloud
+  port: 8883
+  topic: Magna/Ontario/New_Market/Line_1
+  sleep_interval: 30
+
+paths:
+  inference_data: data/splits/inference_data.csv
+  train_data: data/splits/training_data.csv
+  raw_data: data/raw/Machine_Downtime_Large.xlsx
+  s3_key: raw_data/Machine_Downtime_Large.xlsx
+  encoder_dir: encoders/
+  model_dir: models/
+  scaler_dir: scalers/
+
+dashboard:
+  refresh_interval: 20200
+  log_history_limit: 1000
+
+model:
+  target_column: "Future_Downtime_Label"
+  shift_periods: 10
+  test_size: 0.15
+  cv_folds: 3
+
+preprocessing:
+  sensor_columns:
+    - "Hydraulic_Pressure(bar)"
+    - "Coolant_Pressure(bar)" 
+    - "Torque(Nm)"
+    - "Spindle_Speed(RPM)"
+    - "Voltage(volts)"
+    - "Coolant_Temperature"
+    - "Air_System_Pressure(bar)"
+    - "Hydraulic_Oil_Temperature(?C)"
+    - "Spindle_Bearing_Temperature(?C)"
+    - "Spindle_Vibration(?m)"
+    - "Tool_Vibration(?m)"
+    - "Cutting(kN)"
+  categorical_columns:
+    - "Machine_ID"
+    - "Assembly_Line_No"
+
+monitoring:
+  drift_delta: 0.01
+  anomaly_contamination: 0.01
+  reference_update_frequency: 50
+  prometheus_port: 8001
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  batch_log_size: 1000

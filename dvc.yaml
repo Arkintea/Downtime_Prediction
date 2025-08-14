@@ -1,0 +1,45 @@
+stages:
+  prepare_data:
+    cmd: python training_pipeline/train_pipeline.py
+    deps:
+      - data/raw/Machine_Downtime_Large.xlsx
+      - training_pipeline/train_pipeline.py
+      - data_preprocessing/initial_cleaning.py
+      - data_preprocessing/preprocessor.py
+      - utils/s3_download.py
+      - utils/s3_upload.py
+      - utils/save_encoder.py
+      - config/config.yaml
+    outs:
+      - data/splits/
+      - data/processed/
+      - models/
+      - encoders/
+      - scalers/
+      - metadata/
+
+  train_model:
+    cmd: python training_pipeline/train_model.py --mlflow
+    deps:
+      - data/splits/
+      - training_pipeline/train_model.py
+      - models/
+      - encoders/
+      - scalers/
+      - config/config.yaml
+    outs:
+      - models/
+      - mlruns/
+    params:
+      - training_pipeline/params.yaml
+
+  evaluate_model:
+    cmd: python training_pipeline/evaluate_model.py --mlflow
+    deps:
+      - models/
+      - training_pipeline/evaluate_model.py
+      - data/splits/
+    params:
+      - training_pipeline/params.yaml
+    outs:
+      - evaluation_reports/

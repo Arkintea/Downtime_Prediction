@@ -1,0 +1,36 @@
+artifact_path: file:///C:/Users/User/Desktop/Job/Magna/Code/mlruns/365438821957551932/models/m-9b1e778180d64dc29b742c5619cb816c/artifacts
+env_vars:
+- API_KEY
+- KAFKA_API_KEY
+- SCHEMA_REGISTRY_API_KEY
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.4
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: xgb
+    xgb_version: 3.0.3
+is_signature_from_type_hint: false
+mlflow_version: 3.1.4
+model_id: m-9b1e778180d64dc29b742c5619cb816c
+model_size_bytes: 68146115
+model_uuid: m-9b1e778180d64dc29b742c5619cb816c
+prompts: null
+run_id: e6de832ce3f24a6f90f43a9307e0b736
+saved_input_example_info:
+  artifact_path: input_example.json
+  serving_input_path: serving_input_example.json
+  type: ndarray
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 62]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-08-14 06:57:23.753204'

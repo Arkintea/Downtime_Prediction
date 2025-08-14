@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Downtime_Prediction"
+version = "0.0.1"
+description = "A downtime predictive prediction for Magna"
+authors = [
+    { name = "Akintayo Akinpelu", email = "akinpeluakintayo@outlook.com" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.packages.find]
+where = ["."]

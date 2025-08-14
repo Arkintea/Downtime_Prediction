@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/User/Desktop/Job/Magna/Code/mlruns/365438821957551932/models/m-9b1e778180d64dc29b742c5619cb816c/artifacts
+creation_timestamp: 1755154643251
+experiment_id: '365438821957551932'
+last_updated_timestamp: 1755154687139
+model_id: m-9b1e778180d64dc29b742c5619cb816c
+model_type: null
+name: best_model
+source_run_id: e6de832ce3f24a6f90f43a9307e0b736
+status: 2
+status_message: null

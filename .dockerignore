@@ -1,0 +1,8 @@
+# .dockerignore
+.env
+data/
+artifacts/
+mlruns/
+__pycache__/
+*.pyc
+*.pkl
